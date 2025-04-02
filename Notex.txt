@@ -1,0 +1,9 @@
+Project: Notex 📌
+Description:
+	Notex is a sleek and intuitive Chrome extension designed to help you save important text 
+	from any webpage with just a click. Simply highlight the content you want to keep, and a 
+	discreet button will appear next to your cursor. With one click, the selected text is 
+	securely stored in your browser’s storage, ensuring it’s always there when you need it. 
+	When you close your browser, your saved content is automatically transferred to a local 
+	file, making it accessible even after a shutdown. Perfect for research, quick notes, or 
+	saving valuable information without leaving the page.

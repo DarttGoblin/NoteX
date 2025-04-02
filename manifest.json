@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Notex",
+    "version": "1.0",
+    "permissions": ["storage"],
+    "description": "Promodo and deadline reminder",
+    "action": {
+        "default_popup": "Notex.html",
+        "default_icon": "Notex.Media/Notex.png"
+    },
+    "background": {
+        "service_worker": "Notex.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["Notex.html", "Notex.Media/deadline-music.mp3"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "icons": {
+        "16": "Notex.Media/Notex.png",
+        "48": "Notex.Media/Notex.png",
+        "126": "Notex.Media/Notex.png"
+    }
+}
