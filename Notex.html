@@ -2,17 +2,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="Notex.Styles/Nav.css">
-    <link rel="stylesheet" href="Notex.Styles/Footer.css">
-    <link rel="stylesheet" href="Notex.Styles/About.css">
-    <link rel="stylesheet" href="Notex.css">
-    <title>Notex</title>
+    <link rel="stylesheet" href="NoteX.Styles/Nav.css">
+    <link rel="stylesheet" href="NoteX.Styles/Footer.css">
+    <link rel="stylesheet" href="NoteX.Styles/Vault.css">
+    <link rel="stylesheet" href="NoteX.Styles/About.css">
+    <link rel="stylesheet" href="NoteX.css">
+    <title>NoteX</title>
 </head>
 <body>
     <div class="notex-header">
         <div class="notex-header-logo-container">
-            <img class="notex-header-logo" src="Notex.Media/Notex.png">
-            <span class="notex-header-title">Notex</span>
+            <img class="notex-header-logo" src="NoteX.Media/NoteX.png">
+            <span class="notex-header-title">NoteX</span>
         </div>
         <div class="notex-header-icons">
             <i class="notex-header-icon settings fa fa-gear"></i>
@@ -28,7 +29,11 @@
     <div class="section vault-section active-section">
         <div class="vault-container"></div>
         <div class="vault-buttons-container">
-            <button class="remove-all-vault vault-button">
+            <button class="save-to-local vault-button">
+                <i class="vault-button-icon fa fa-book"></i>
+                Save to Local File
+            </button>
+            <button class="clear-vault vault-button">
                 <i class="vault-buttons-icon fa fa-trash"></i>
                 Clear Vault
             </button>
@@ -37,42 +42,52 @@
 
     <div class="section about-section">
         👋 Hi there,<br>
-        Notex isn't just a timer—it's your personal timekeeper, taskmaster, and gentle-but-firm deadline enforcer. 
-        Whether you're racing against exam deadlines, dodging last-minute presentations, or just trying to survive 
-        the chaotic jungle of responsibilities, Notex keeps your most important tasks ticking right before your 
-        eyes. With a sleek interface and persistent memory (even after a full system shutdown), it refuses to let 
-        your deadlines fade into oblivion. Oh! you kept reading til this point. Em nice impressive.. :) anyway! 
-        Time waits for no one—but with Notex, at least you'll see it coming.<br><br>
+        NoteX isn't just a note saver—it's your digital memory, your research companion, and your personal vault for 
+        important thoughts. Whether you're collecting key insights, saving must-read snippets, or just jotting down 
+        ideas before they slip away, NoteX keeps your highlights safe and sound. With a seamless interface and 
+        automatic backup (even after shutdown), your notes stay with you wherever you go. Oh, you're still reading? 
+        Nice—looks like you appreciate good ideas too. 😉 Anyway! Great thoughts deserve to be remembered, and with 
+        NoteX, they always will be.<br><br>
 
         ❌ Important!<br>
         For Brave users, Brave disables Chrome extension APIs like chrome.storage by default for privacy reasons, 
-        leading to unexpected behaviours and errors in Notex, to fix this issue for Brave browser: <br><br>
+        leading to unexpected behaviours and errors in NoteX, to fix this issue for Brave browser: <br><br>
         
         1. Go to Brave Settings.<br>
         2. Navigate to extensions section in the sidenav bar.<br>
         3. Enable "Allow Google Login for Extensions".<br>
         3. Restart Brave and Reload the Extension.<br><br>
         
-        This allows Chrome's extension APIs to work properly, and Notex will run smoothly. Enjoy!<br><br>
+        This allows Chrome's extension APIs to work properly, and NoteX will run smoothly. Enjoy!<br><br>
 
         📝 Usecases:<br>
-
-        Content not available now!
+        NoteX simplifies online information gathering by allowing users to save highlighted text instantly. 
+        Whether for research, note-taking, or content organization, it ensures quick access to important 
+        details without disrupting workflow.
+        
+        <div class="usecases">
+            <span><span class="usecase">Research Assistance:</span> Save key excerpts from articles.</span>
+            <span><span class="usecase">Note-Taking:</span> Store important points while reading.</span>
+            <span><span class="usecase">Content Curation:</span> Collect and organize useful information.</span>
+            <span><span class="usecase">Task Management:</span> Save critical details for projects.</span>
+            <span><span class="usecase">Writing & Journalism:</span> Capture references and ideas.</span>
+            <span><span class="usecase">Legal Compliance:</span> Store essential legal clauses.</span>
+            <span><span class="usecase">Education:</span> Save definitions and explanations.</span>
+            <span><span class="usecase">Programming:</span> Store useful code snippets.</span>
+        </div>
     </div>
 
     <footer>
         <span class='reserved'>© 2025 Yassine Bazgour, All rights reserved.</span>
         <div class='contact-icons'>
-            <img class="portfolio-logo" src="Notex.Media/logo-no-bg-black.png">
+            <img class="portfolio-logo" src="NoteX.Media/logo-no-bg-black.png">
             <i class='contact-icon linkedin fab fa-linkedin'></i>
             <i class='contact-icon github fab fa-github'></i>
             <i class='contact-icon instagram fab fa-instagram'></i>
         </div>
     </footer>
 
-    <script src="Notex.Scripts/Nav.js"></script>
-    <script src="Notex.Scripts/Footer.js"></script>
-    <script src="Notex.Scripts/Deadlines.js"></script>
-    <script src="Notex.Scripts/Tasks.js"></script>
-    <script src="Notex.Scripts/Dashboard.js"></script>
+    <script src="NoteX.Scripts/Nav.js"></script>
+    <script src="NoteX.Scripts/Footer.js"></script>
+    <script src="NoteX.Scripts/Vault.js"></script>
 </body>

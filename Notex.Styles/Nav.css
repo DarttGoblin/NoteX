@@ -1,5 +1,5 @@
-.chronix-header {
-    background-image: url("../Chronix.Media/header-image.png");
+.notex-header {
+    background-image: url("../Notex.Media/header-image.png");
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@
     padding: 10px;
 }
 
-.chronix-header-logo-container {
+.notex-header-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,23 +17,23 @@
     margin-left: 20px;
 }
 
-.chronix-header-logo {
+.notex-header-logo {
     height: 40px;
     width: 40px;
 }
 
-.chronix-header-title {
+.notex-header-title {
     font-size: 30px;
     font-weight: 700;
     color: white;
     cursor: pointer;
 }
 
-.chronix-header-title:hover {
+.notex-header-title:hover {
     color: var(--main-color);
 }
 
-.chronix-header-icons {
+.notex-header-icons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,14 +41,14 @@
     margin-right: 20px;
 }
 
-.chronix-header-icon {
+.notex-header-icon {
     font-size: 25px;
     color: white;
     cursor: pointer;
     padding: 5px;
 }
 
-.chronix-header-icon:hover {
+.notex-header-icon:hover {
     color: var(--main-color);
 }
 
@@ -65,7 +65,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 20%;
+    width: 50%;
     font-size: 18px;
     height: 40px;
     border-bottom: 1px solid var(--main-sub-color);

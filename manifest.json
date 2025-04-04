@@ -8,13 +8,10 @@
         "default_popup": "Notex.html",
         "default_icon": "Notex.Media/Notex.png"
     },
-    "background": {
-        "service_worker": "Notex.js"
-    },
-    "web_accessible_resources": [
+    "content_script": [
         {
-            "resources": ["Notex.html", "Notex.Media/deadline-music.mp3"],
-            "matches": ["<all_urls>"]
+            "matches": ["<all_urls>"],
+            "js": ["Notex.Script/Select.js"]
         }
     ],
     "icons": {
