@@ -1,39 +1,47 @@
-console.log('hi');
-// chrome.tabs.insertCSS(null, { file: '../Notex.Styles/Select.css' }, function() {
-    // console.log('css has been injected');
-// });
-// console.log('css has been injected');
 TakeNotes();
 
 function TakeNotes() {
-    console.log('listening to user selects...');
-    document.addEventListener('mouseup', (event) => {
-        const selected_text = window.getSelection().toString().trim();
-        if (!selected_text) {return;}
-        console.log('button creation...');
-
-        const popup_button = document.createElement('button');
-        // const popup_button_img = document.createElement('img');
-        popup_button.classList.add('popup-button');
-        popup_button.textContent = 'note';
-        // popup_button_img.classList.add('popup-button-img');
-        // popup_button_img.src = '../Chronix.Media/Notex.png';
-        // popup_button.appendChild(popup_button_img);
-        
-        popup_button.style.position = 'absolute';
-        popup_button.style.left = `${event.clientX + 5}px`;
-        popup_button.style.top = `${event.clientY + 5}px`;  
-        popup_button.style.zIndex = '9999';
-        document.body.appendChild(popup_button);
-
-        popup_button.onclick = function() {
-            console.log('popup button clicked!');
-            const link = window.location.href;
-            const note = { timestamp: Timestamp(), link, content: selected_text };
-            chrome.runtime.sendMessage({ note: note });
-            document.body.removeChild(popup_button);
+    document.addEventListener('mousedown', (event) => {
+        if (!event.target.classList.contains('popup-button')) {
+            RemoveButton();
         }
     });
+    document.addEventListener('mouseup', (event) => {
+        setTimeout(() => {
+            const selected_text = window.getSelection().toString().trim();
+            if (selected_text.length > 0) {
+                CreateButton(event, selected_text);
+            }
+        }, 10);
+      });
+}
+
+function CreateButton(event, selected_text) {
+    RemoveButton();
+    const popup_button = document.createElement('button');
+    StyleButton(popup_button, event.clientX, event.clientY);
+    document.body.appendChild(popup_button);
+
+    popup_button.onclick = function () {
+        console.log('button clicked...');
+        const link = window.location.href;
+        const note = { id: GenerateId(), timestamp: Timestamp(), link, content: selected_text };
+        chrome.storage.local.get({ notes: [] }, function (data) {
+            const notes = data.notes;
+            notes.push(note);
+            chrome.storage.local.set({ notes });
+            console.log('note saved');
+        });
+    };
+}
+
+function RemoveButton() {
+    const previous_popup_buttons = document.querySelectorAll('.popup-button');
+    if (previous_popup_buttons.length > 0) {
+        previous_popup_buttons.forEach((button) => {
+            document.body.removeChild(button);
+        });
+    }
 }
 
 function Timestamp() {
@@ -46,4 +54,23 @@ function Timestamp() {
     const min = String(timestamp.getMinutes()).padStart(2, '0');
     
     return `${yyyy}:${mm}:${dd} ${hh}:${min}`;
+}
+
+function StyleButton(button, x_position, y_position) {
+    button.textContent = '📌';
+    button.className = 'popup-button';
+    button.style.position = 'absolute';
+    button.style.left = `${x_position + 5}px`;
+    button.style.top = `${y_position + 5}px`;  
+    button.style.padding = '3px 5px 5px 5px';
+    button.style.backdropFilter = 'blur(10px)';
+    button.style.backgroundColor = 'rgb(0, 0, 0, 0.3)';
+    button.style.border = 'none';
+    button.style.borderRadius = '50%';
+    button.style.cursor = 'pointer';
+    button.style.zIndex = '9999';
+}
+
+function GenerateId() {
+    return Date.now().toString(36).substring(3) + Math.random().toString(36).substring(2, 6);
 }

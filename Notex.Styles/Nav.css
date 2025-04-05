@@ -67,6 +67,7 @@ nav {
     text-align: center;
     width: 50%;
     font-size: 18px;
+    font-weight: 600;
     height: 40px;
     border-bottom: 1px solid var(--main-sub-color);
     cursor: pointer;
