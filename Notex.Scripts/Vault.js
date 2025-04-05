@@ -16,12 +16,15 @@ function RetrieveNotes() {
             no_notes.innerHTML = 'No notes yet!<br>Every great thought deserves to be saved! 📝💡';
             no_notes.classList.add('no-notes');
             notes_container.appendChild(no_notes);
+            AdjustHeight();
             return;
         }
 
         notes.forEach(note => {
             CreateNote(note);
         });
+
+        AdjustHeight();
     });
 }
 
