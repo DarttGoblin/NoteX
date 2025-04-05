@@ -1,22 +1,22 @@
 {
     "manifest_version": 3,
-    "name": "Notex",
+    "name": "NoteX",
     "version": "1.0",
     "permissions": ["storage"],
-    "description": "Promodo and deadline reminder",
+    "description": "Instant notes collector",
     "action": {
-        "default_popup": "Notex.html",
-        "default_icon": "Notex.Media/Notex.png"
+        "default_popup": "NoteX.html",
+        "default_icon": "NoteX.Media/NoteX.png"
     },
-    "content_script": [
+    "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["Notex.Script/Select.js"]
+            "js": ["NoteX.Script/Select.js"]
         }
     ],
     "icons": {
-        "16": "Notex.Media/Notex.png",
-        "48": "Notex.Media/Notex.png",
-        "126": "Notex.Media/Notex.png"
+        "16": "NoteX.Media/NoteX.png",
+        "48": "NoteX.Media/NoteX.png",
+        "126": "NoteX.Media/NoteX.png"
     }
 }
