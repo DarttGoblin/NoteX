@@ -1,3 +1,5 @@
+-----------------------------------------------------------------------------------------------------
+
 Project: Notex 📌<br><br>
 Description:<br>
 	Notex is a sleek and intuitive Chrome extension designed to help you save important text 
@@ -7,6 +9,8 @@ Description:<br>
 	When you close your browser, your saved content is automatically transferred to a local 
 	file, making it accessible even after a shutdown. Perfect for research, quick notes, or 
 	saving valuable information without leaving the page.<br><br>
+
+ -----------------------------------------------------------------------------------------------------
 
 🧩 How to Install NoteX Extension (Step-by-Step)<br><br>
 Download the NoteX folder:
@@ -30,3 +34,5 @@ In the file dialog, navigate to the downloaded NoteX folder and click Select Fol
 
 You're Done!
 NoteX is now installed and ready to use. You’ll see the NoteX icon in your Chrome toolbar.
+
+-----------------------------------------------------------------------------------------------------
