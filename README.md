@@ -1,0 +1,32 @@
+Project: Notex 📌<br><br>
+Description:<br>
+	Notex is a sleek and intuitive Chrome extension designed to help you save important text 
+	from any webpage with just a click. Simply highlight the content you want to keep, and a 
+	discreet button will appear next to your cursor. With one click, the selected text is 
+	securely stored in your browser’s storage, ensuring it’s always there when you need it. 
+	When you close your browser, your saved content is automatically transferred to a local 
+	file, making it accessible even after a shutdown. Perfect for research, quick notes, or 
+	saving valuable information without leaving the page.<br><br>
+
+🧩 How to Install NoteX Extension (Step-by-Step)
+Download the NoteX folder
+First, make sure you've downloaded the entire NoteX extension folder to your computer.
+
+Open Google Chrome
+Launch the Chrome browser.
+
+Go to Extensions Page
+In Chrome, type this in the address bar and hit Enter:
+chrome://extensions/
+
+Enable Developer Mode
+At the top-right corner of the extensions page, turn on the toggle for Developer mode.
+
+Click "Load Unpacked"
+A new set of buttons will appear. Click Load unpacked.
+
+Select the NoteX Folder
+In the file dialog, navigate to the downloaded NoteX folder and click Select Folder (or Open, depending on OS).
+
+You're Done!
+NoteX is now installed and ready to use. You’ll see the NoteX icon in your Chrome toolbar.
