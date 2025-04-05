@@ -8,24 +8,24 @@ Description:<br>
 	file, making it accessible even after a shutdown. Perfect for research, quick notes, or 
 	saving valuable information without leaving the page.<br><br>
 
-🧩 How to Install NoteX Extension (Step-by-Step)
-Download the NoteX folder
+🧩 How to Install NoteX Extension (Step-by-Step)<br><br>
+Download the NoteX folder:
 First, make sure you've downloaded the entire NoteX extension folder to your computer.
 
-Open Google Chrome
+Open Google Chrome:
 Launch the Chrome browser.
 
-Go to Extensions Page
+Go to Extensions Page:
 In Chrome, type this in the address bar and hit Enter:
 chrome://extensions/
 
-Enable Developer Mode
+Enable Developer Mode:
 At the top-right corner of the extensions page, turn on the toggle for Developer mode.
 
-Click "Load Unpacked"
+Click "Load Unpacked":
 A new set of buttons will appear. Click Load unpacked.
 
-Select the NoteX Folder
+Select the NoteX Folder:
 In the file dialog, navigate to the downloaded NoteX folder and click Select Folder (or Open, depending on OS).
 
 You're Done!
