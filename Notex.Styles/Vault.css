@@ -39,6 +39,7 @@
     color: rgb(68, 135, 230);
     font-weight: 700;
     cursor: pointer;
+    height: fit-content;
 }
 
 .note-link:hover {
@@ -48,6 +49,7 @@
 
 .timestamp {
     width: 71px;
+    height: fit-content;
 }
 
 .vault-buttons-container {

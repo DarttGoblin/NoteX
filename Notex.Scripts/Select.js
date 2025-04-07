@@ -23,7 +23,6 @@ function CreateButton(event, selected_text) {
     document.body.appendChild(popup_button);
 
     popup_button.onclick = function () {
-        console.log('button clicked...');
         const link = window.location.href;
         const note = { id: GenerateId(), timestamp: Timestamp(), link, content: selected_text };
         chrome.storage.local.get({ notes: [] }, function (data) {
