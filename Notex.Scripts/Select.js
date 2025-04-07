@@ -19,7 +19,7 @@ function TakeNotes() {
 function CreateButton(event, selected_text) {
     RemoveButton();
     const popup_button = document.createElement('button');
-    StyleButton(popup_button, event.clientX, event.clientY);
+    StyleButton(popup_button, event.pageX, event.pageY);
     document.body.appendChild(popup_button);
 
     popup_button.onclick = function () {
