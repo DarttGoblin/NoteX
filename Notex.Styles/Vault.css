@@ -29,6 +29,7 @@
 .note-trash-icon {
     margin-top: 3px;
     cursor: pointer;
+    height: fit-content;
 }
 
 .note-trash-icon:hover {
