@@ -1,10 +1,12 @@
 const notes_container = document.querySelector('.notes-container');
 const save_to_local = document.querySelector('.save-to-local');
 const clear_vault = document.querySelector('.clear-vault');
+const add_note = document.querySelector('.add-note');
 
 RetrieveNotes();
 save_to_local.onclick = SaveToLocalFile;
 clear_vault.onclick = ClearVault;
+add_note.onclick = RequestUserInput;
 
 function RetrieveNotes() {
     notes_container.innerHTML = '';
@@ -28,6 +30,44 @@ function RetrieveNotes() {
     });
 }
 
+function RequestUserInput() {
+    const note_user_info = document.createElement('div');
+    const note_user_content = document.createElement('input');
+    const note_user_button = document.createElement('button');
+    
+    note_user_content.placeholder = 'Enter Note';
+    note_user_content.type = 'text';
+    note_user_button.innerHTML = 'Confirm';
+
+    note_user_info.classList.add('note-user-info');
+    note_user_content.classList.add('note-user-content');
+    note_user_button.classList.add('note-user-button');
+
+    note_user_info.appendChild(note_user_content);
+    note_user_info.appendChild(note_user_button);
+    notes_container.appendChild(note_user_info);
+    
+    note_user_button.onclick = function() {
+        const written_note_content = note_user_content.value.trim(); 
+    
+        if (!written_note_content) {
+            alert("Some information seems to be missing!");
+            return;
+        }
+
+        const link = 'Note';
+        const written_note = { id: GenerateId(), timestamp: Timestamp(), link, content: written_note_content };
+        chrome.storage.local.get({ notes: [] }, function (data) {
+            const notes = data.notes;
+            notes.push(written_note);
+    
+            chrome.storage.local.set({ notes: notes }, function() {
+                RetrieveNotes();
+            });
+        });
+    }
+}
+
 function CreateNote(note) {
     const note_container = document.createElement('div');
     const trash_icon = document.createElement('i');
@@ -46,6 +86,13 @@ function CreateNote(note) {
     note_span.textContent = note.content;
     note_link.textContent = 'Http';
     note_link.onclick = function() {window.open(note.link, '_blank');}
+    
+    if (note.link == 'Note') {
+        note_link.classList.remove('note-link');
+        note_link.classList.add('user-note');
+        note_link.textContent = 'Note';
+        note_link.onclick = function(e) {e.preventDefault()};
+    }
 
     note_container.appendChild(trash_icon);
     note_container.appendChild(timestamp);
@@ -95,4 +142,20 @@ function SaveToLocalFile() {
             saveAs: true
         });
     });
+}
+
+function Timestamp() {
+    const timestamp = new Date();
+
+    const yyyy = timestamp.getFullYear();
+    const mm = String(timestamp.getMonth() + 1).padStart(2, '0');
+    const dd = String(timestamp.getDate()).padStart(2, '0');
+    const hh = String(timestamp.getHours()).padStart(2, '0');
+    const min = String(timestamp.getMinutes()).padStart(2, '0');
+    
+    return `${yyyy}:${mm}:${dd} ${hh}:${min}`;
+}
+
+function GenerateId() {
+    return Date.now().toString(36).substring(3) + Math.random().toString(36).substring(2, 6);
 }
