@@ -100,6 +100,7 @@
     justify-self: center;
     align-self: center;
     gap: 20px;
+    margin-top: 20px;
 }
 
 .note-user-content {
